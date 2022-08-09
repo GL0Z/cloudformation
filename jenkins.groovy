@@ -1,3 +1,4 @@
+def outputs = cfnDescribe(stack:'aws-rds-logs-s3')
 pipeline {
     agent any
     stages {
