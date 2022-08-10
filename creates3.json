@@ -5,7 +5,7 @@
         "BucketName": {
             "Type": "String",
             "Description": "Bucket Name",
-            "Default": "cfts3-bucket"
+            "Default": "s3jenkins-cft"
         }
     },
     "Resources": {
@@ -17,39 +17,8 @@
                     "Ref": "BucketName"
                 }
             }
-        },
-        "MyS3BucketPolicy": {
-            "Type": "AWS::S3::BucketPolicy",
-            "Properties": {
-                "Bucket": {
-                    "Ref": "MyS3Bucket"
-                },
-                "PolicyDocument": {
-                    "Statement": [
-                        {
-                            "Action": [
-                                "s3:*"
-                            ],
-                            "Effect": "Allow",
-                            "Resource": [
-                                {
-                                    "Fn::Sub": "arn:aws:s3:::${MyS3Bucket}"
-                                },
-                                {
-                                    "Fn::Sub": "arn:aws:s3:::${MyS3Bucket}/*"
-                                }
-                            ],
-                            "Principal": {
-                                "AWS": [
-                                    "*"
-                                ]
-                            }
-                        }
-                    ]
-                }
-            }
         }
     }
 }
 
-
+         
