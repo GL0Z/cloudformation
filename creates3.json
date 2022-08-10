@@ -5,7 +5,7 @@
         "BucketName": {
             "Type": "String",
             "Description": "Bucket Name",
-            "Default": "ankush-bucket"
+            "Default": "cloudformation-bucket"
         }
     },
     "Resources": {
