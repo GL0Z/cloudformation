@@ -1,4 +1,4 @@
-def outputs = cfnDescribe(stack:'aws-rds-logs-s3')
+def outputs = cfnDescribe(stack:"dsh-impl1b-ffm-hub-jboss-intelligent-scaling")
 pipeline {
     agent any
     stages {
@@ -9,6 +9,7 @@ pipeline {
                     //cfnDelete(stack:'S3bucket-policy')
                   //cfnDescribe(stack:"dsh-impl1b-ffm-hub-jboss-intelligent-scaling")
                     cfnValidate(file:'Cf-s3.yaml')
+                    echo "${outputs}"
                 }
             }
         }
