@@ -9,7 +9,7 @@ pipeline {
                     //cfnDelete(stack:'S3bucket-policy')
                   //cfnDescribe(stack:"dsh-impl1b-ffm-hub-jboss-intelligent-scaling")
                     cfnValidate(file:'creates3.json')
-                    cfnUpdate(stack:'ankush-stack', file:'creates3.json')
+                    cfnUpdate(stack:'testingcft', file:'creates3.json')
                 }
             }
         }
