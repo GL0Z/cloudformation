@@ -1,4 +1,4 @@
-def outputs = cfnDescribe(stack:"dsh-impl1b-ffm-hub-jboss-intelligent-scaling")
+
 pipeline {
     agent any
     stages {
@@ -8,8 +8,8 @@ pipeline {
                     sh 'echo "hello KB">hello.txt'
                     //cfnDelete(stack:'S3bucket-policy')
                   //cfnDescribe(stack:"dsh-impl1b-ffm-hub-jboss-intelligent-scaling")
-                    cfnValidate(file:'Cf-s3.yaml')
-                    echo "${outputs}"
+                    cfnValidate(file:'creates3.json')
+                    cfnUpdate(stack:'pipeline-stack', file:'creates3.json')
                 }
             }
         }
